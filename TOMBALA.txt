@@ -1,0 +1,111 @@
+create database TOMBALA 
+create table OYUN(kartno int ,num1 int,num2 int,num3 int,num4 int,num5 int, num6 int,num7 int,num8 int, num9 int,num10 int)
+DECLARE @SAYAC INT=1
+declare @sayi1 int, @sayi2 int ,@sayi3 int,@sayi4 int,@sayi5 int,@sayi6 int,@sayi7 int,@sayi8 int,@sayi9 int,@sayi10 int
+declare @sonkart int=0
+SELECT @sonkart= MAX(kartno) FROM OYUN
+WHILE @SAYAC<5
+BEGIN
+SELECT @sayi1= CONVERT(INT, RAND() * 100)
+SELECT @sayi2= CONVERT(INT, RAND() * 100)
+SELECT @sayi3= CONVERT(INT, RAND() * 100)
+SELECT @sayi4= CONVERT(INT, RAND() * 100)
+SELECT @sayi5= CONVERT(INT, RAND() * 100)
+SELECT @sayi6= CONVERT(INT, RAND() * 100)
+SELECT @sayi7= CONVERT(INT, RAND() * 100)
+SELECT @sayi8= CONVERT(INT, RAND() * 100)
+SELECT @sayi9= CONVERT(INT, RAND() * 100)
+SELECT @sayi10= CONVERT(INT, RAND() * 100)
+insert into  OYUN(kartno,num1,num2,num3,num4,num5,num6,num7,num8,num9,num10) values (@SAYAC,@sayi1,@sayi2,@sayi3,@sayi4,@sayi5,@sayi6,@sayi7,@sayi8,@sayi9,@sayi10) 
+SET @SAYAC+=1;
+end
+go
+
+DECLARE @SAYAC INT=1
+declare @sayi1 int, @sayi2 int ,@sayi3 int,@sayi4 int,@sayi5 int,@sayi6 int,@sayi7 int,@sayi8 int,@sayi9 int,@sayi10 int
+declare @torbadancekilen int 
+SELECT @torbadancekilen=CONVERT(INT,RAND()*100)
+ WHILE(@SAYAC<5)
+ BEGIN 
+ print @torbadancekilen
+ UPDATE OYUN SET num1='+' where num1=@torbadancekilen
+ UPDATE OYUN SET num2 ='+' where num2=@torbadancekilen
+ UPDATE OYUN SET num3 ='+' where num3=@torbadancekilen
+ UPDATE OYUN SET num4 ='+' where num4=@torbadancekilen
+ UPDATE OYUN SET num5 ='+' where num5=@torbadancekilen
+ UPDATE OYUN SET num6 ='+' where num6=@torbadancekilen
+ UPDATE OYUN SET num7 ='+' where num7=@torbadancekilen
+ UPDATE OYUN SET num8 ='+' where num8=@torbadancekilen
+ UPDATE OYUN SET num9 ='+' where num9=@torbadancekilen
+ UPDATE OYUN SET num10 ='+' where num10=@torbadancekilen
+
+ SET @SAYAC+=1;
+ END
+ GO
+
+
+
+DECLARE @SAYAC INT=1
+declare @sayi1 int, @sayi2 int ,@sayi3 int,@sayi4 int,@sayi5 int,@sayi6 int,@sayi7 int,@sayi8 int,@sayi9 int,@sayi10 int
+declare @torbadancekilen int 
+SELECT @torbadancekilen=CONVERT(INT,RAND()*100)
+ WHILE(@SAYAC<5)
+ BEGIN 
+ print @torbadancekilen
+ UPDATE OYUN SET num1='+' where num1=@torbadancekilen
+ UPDATE OYUN SET num2 ='+' where num2=@torbadancekilen
+ UPDATE OYUN SET num3 ='+' where num3=@torbadancekilen
+ UPDATE OYUN SET num4 ='+' where num4=@torbadancekilen
+ UPDATE OYUN SET num5 ='+' where num5=@torbadancekilen
+ UPDATE OYUN SET num6 ='+' where num6=@torbadancekilen
+ UPDATE OYUN SET num7 ='+' where num7=@torbadancekilen
+ UPDATE OYUN SET num8 ='+' where num8=@torbadancekilen
+ UPDATE OYUN SET num9 ='+' where num9=@torbadancekilen
+ UPDATE OYUN SET num10 ='+' where num10=@torbadancekilen
+ SET @SAYAC+=1;
+ END
+ GO
+
+
+
+create procedure tascek
+as begin 
+DECLARE @SAYAC INT=1
+declare @sayi1 int, @sayi2 int ,@sayi3 int,@sayi4 int,@sayi5 int,@sayi6 int,@sayi7 int,@sayi8 int,@sayi9 int,@sayi10 int
+declare @torbadancekilen int 
+SELECT @torbadancekilen=CONVERT(INT,RAND()*100)
+ WHILE(@SAYAC<5)
+ BEGIN 
+ print @torbadancekilen
+ UPDATE OYUN SET num1='+' where num1=@torbadancekilen
+ UPDATE OYUN SET num2 ='+' where num2=@torbadancekilen
+ UPDATE OYUN SET num3 ='+' where num3=@torbadancekilen
+ UPDATE OYUN SET num4 ='+' where num4=@torbadancekilen
+ UPDATE OYUN SET num5 ='+' where num5=@torbadancekilen
+ UPDATE OYUN SET num6 ='+' where num6=@torbadancekilen
+ UPDATE OYUN SET num7 ='+' where num7=@torbadancekilen
+ UPDATE OYUN SET num8 ='+' where num8=@torbadancekilen
+ UPDATE OYUN SET num9 ='+' where num9=@torbadancekilen
+ UPDATE OYUN SET num10 ='+' where num10=@torbadancekilen
+ SET @SAYAC+=1;
+ END
+ end
+ end
+
+
+
+create procedure kontrol 
+as
+begin
+declare @SAYAC int
+set @SAYAC=1
+declare @sayi1 int, @sayi2 int ,@sayi3 int,@sayi4 int,@sayi5 int,@sayi6 int,@sayi7 int,@sayi8 int,@sayi9 int,@sayi10 int
+while (@SAYAC<5)
+begin
+SELECT kartno,num1,num2,num3,num4,num5,num6,num7,num8,num9,num10 from OYUN where  kartno=@SAYAC AND num1=0 AND num2=0 AND num3=0 AND num4=0 AND num5=0 AND num6=0 AND num7=0 AND num8=0 AND num9=0 AND num10=0 
+set @SAYAC=@SAYAC+1
+end
+end 
+go
+
+
